@@ -1,0 +1,86 @@
+@request_id = 123
+@address = http://localhost:8080
+
+POST {{address}}/users
+Content-Type: application/json
+
+{
+    "username" : "test1",
+    "password" : "password",
+    "name" : "First User",
+    "email" : "test1@example.com"
+}
+###
+POST {{address}}/users
+Content-Type: application/json
+
+{
+    "username" : "test2",
+    "password" : "password",
+    "name" : "Second User",
+    "email" : "test2@example.com"
+}
+###
+GET {{address}}/users
+###
+GET {{address}}/users/1
+###
+GET {{address}}/users/111
+###
+PUT {{address}}/users/2
+Content-Type: application/json
+Authorization: Bearer 42a7c235-8d32-4545-b29a-c9edc575e9ee
+
+{
+    "name" : "First User Updated"
+}
+###
+DELETE {{address}}/users/2
+###
+GET {{address}}/users/2
+###
+POST {{address}}/users/1/posts
+Content-Type: application/json
+
+{
+    "Content": "Hello World"
+}
+###
+POST {{address}}/users/1/posts
+Content-Type: application/json
+
+{
+    "Content": "Second Post"
+}
+###
+GET {{address}}/users/1/posts
+###
+GET {{address}}/users/1/posts/1
+###
+GET {{address}}/users/1/posts/111
+###
+PUT {{address}}/users/1/posts/1
+Content-Type: application/json
+
+{
+    "Content": "Hello World Updated",
+    "Likes": 1
+}
+###
+GET {{address}}/users/1/posts/1
+###
+DELETE {{address}}/users/1/posts/2
+###
+GET {{address}}/users/1/posts/2
+###
+
+POST {{address}}/login
+Content-Type: application/x-www-form-urlencoded
+
+u=test2
+&p=password
+###
+GET {{address}}/tables
+X-Request-ID: {{request_id}}
+Authorization: Bearer 75076717-31f0-4aa7-ba43-80567a1f4f74
+###
