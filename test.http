@@ -5,10 +5,10 @@ POST {{address}}/users
 Content-Type: application/json
 
 {
-    "username" : "test1",
+    "username" : "blink",
     "password" : "password",
     "name" : "First User",
-    "email" : "test1@example.com"
+    "email" : "blink@email.com"
 }
 ###
 POST {{address}}/users
@@ -27,20 +27,23 @@ GET {{address}}/users/1
 ###
 GET {{address}}/users/111
 ###
-PUT {{address}}/users/2
+PUT {{address}}/users/1
 Content-Type: application/json
-Authorization: Bearer 42a7c235-8d32-4545-b29a-c9edc575e9ee
+Authorization: Bearer 7c413f6f-c7a8-42b0-a8d1-7ed0a670b2fb
 
 {
     "name" : "First User Updated"
 }
 ###
-DELETE {{address}}/users/2
+DELETE {{address}}/users/4
+Authorization: Bearer d4b06cf7-5b32-45d8-933e-b007289ab06a
+
 ###
 GET {{address}}/users/2
 ###
-POST {{address}}/users/1/posts
+POST {{address}}/users/14/posts
 Content-Type: application/json
+Authorization: Bearer e63cd22f-269f-4af6-998d-0478c49e5913
 
 {
     "Content": "Hello World"
@@ -48,6 +51,7 @@ Content-Type: application/json
 ###
 POST {{address}}/users/1/posts
 Content-Type: application/json
+Authorization: Bearer e63cd22f-269f-4af6-998d-0478c49e5913
 
 {
     "Content": "Second Post"
@@ -77,7 +81,7 @@ GET {{address}}/users/1/posts/2
 POST {{address}}/login
 Content-Type: application/x-www-form-urlencoded
 
-u=test2
+u=blink
 &p=password
 ###
 GET {{address}}/tables

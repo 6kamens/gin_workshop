@@ -48,7 +48,7 @@ func main() {
 	sqlDb.SetConnMaxIdleTime(time.Minute)
 	sqlDb.SetConnMaxLifetime(time.Hour)
 
-	if err := db.AutoMigrate(&user.User{}); err != nil {
+	if err := db.AutoMigrate(&user.User{}, &post.Post{}); err != nil {
 		log.Fatal(err)
 	}
 

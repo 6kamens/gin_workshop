@@ -9,6 +9,8 @@ require (
 	github.com/golang/protobuf v1.4.3 // indirect
 	github.com/google/uuid v1.2.0
 	github.com/json-iterator/go v1.1.10 // indirect
+	github.com/labstack/echo v3.3.10+incompatible
+	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/onsi/ginkgo v1.14.2 // indirect
 	github.com/onsi/gomega v1.10.4 // indirect
